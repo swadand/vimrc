@@ -35,6 +35,7 @@ nnoremap <leader>n :NERDTreeToggle<Enter>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+tnoremap <leader>te exit<Enter>
 
 " allow modifying the completeopt variable, or it will
 " be overridden all the time
