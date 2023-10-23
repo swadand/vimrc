@@ -9,7 +9,7 @@ set number
 set relativenumber
 set laststatus=2
 set background=dark
-
+set scrolloff=13
 let g:netrw_banner = 0
 
 "let g:lightline = {
@@ -26,7 +26,8 @@ let g:lightline = {'colorscheme' : 'tokyonight'}
 let g:context_enabled = 1
 let mapleader = " "
 nnoremap <leader>pv :Ex<Enter>
-nnoremap <leader>pf :find<Space>
+nnoremap <leader>pf :Files<Enter>
+nnoremap <leader>pg :GFiles<Enter>
 nnoremap <leader>tn :tabnew<Enter>
 nnoremap <leader>th :tabp<Enter>
 nnoremap <leader>tl :tabn<Enter>
@@ -35,7 +36,8 @@ nnoremap <leader>n :NERDTreeToggle<Enter>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-tnoremap <leader>te exit<Enter>
+tnoremap <leader>tt exit<Enter>
+tnoremap <leader>te :"<C-\><C-n>" 
 
 " allow modifying the completeopt variable, or it will
 " be overridden all the time
@@ -63,6 +65,10 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'preservim/nerdtree'
 Plug 'wellle/context.vim'
 
+"fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+"fuzzy end
 call plug#end()
 
 " NOTE: You can use other key to expand snippet.
